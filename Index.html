@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+            background-size: cover ;
+            background-position: center;
+            background-repeat: no-repeat;
+         height: 100vh;
+         display: flex;
+         justify-content: center;
+         align-items:center ;
+
+        }
+
+        
+
+        section {
+            height: auto;
+    width: 100wh;
+padding: 5rem;
+
+        }
+div{
+}
+button{
+ border-radius: 5rem;
+ padding: .5rem;
+ margin-bottom: .5rem;
+
+}
+#coltext{
+    font-size: small;
+    font-weight:normal;
+   color: white;
+    height: auto;
+    width: 60vh;
+    margin-top:.3rem ;
+    box-shadow: 1px 0px white;
+
+}
+#btn1{
+    background-color: #a8eb12;
+    margin-right:2rem ;
+}
+#btn2{
+    background-color: #008793;
+    margin-right:2rem ;
+
+}
+        
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="btnmenu">
+            <button id="btn1">#a8eb12</button>
+            <button id="btn2">#008793</button>
+        </div>
+        <h6>Copy your code here</h6>
+        <div id="coltext" >
+            Background-image:Linear-gradient(to right,rgb(92, 145,229), rgb(152,63,198))
+        </div>
+ 
+        <script>
+
+let button1=document.getElementById('btn1');
+let button2=document.getElementById('btn2');
+let divcoltext=document.getElementById('coltext');
+
+let btncol1='#a8eb12';
+let btncol2='#008793';
+
+let eventButton1=()=>{
+    let code='0123456789abcdef';
+let colorh='#';
+    for(let i=0;i<6;i++)
+{
+
+  colorh=colorh+code[Math.floor(Math.random()*16)];
+
+}
+console.log(colorh);
+btncol1=colorh;
+button1.textContent=btncol1;
+divcoltext.innerText=`Background-image:Linear-gradient(to right,${btncol1}, ${btncol2})`;
+document.body.style.backgroundImage=` linear-gradient(to right top,${btncol1},${btncol2})`;
+};
+
+
+let eventButton2=()=>{
+    let code='0123456789abcdef';
+let colorh='#';
+    for(let i=0;i<6;i++)
+{
+
+  colorh=colorh+code[Math.floor(Math.random()*16)];
+
+}
+console.log(colorh);
+btncol2=colorh;
+button2.textContent=btncol2;
+divcoltext.innerText=`Background-image:Linear-gradient(to right,${btncol1}, ${btncol2})`;
+document.body.style.backgroundImage=` linear-gradient(to right top,${btncol1},${btncol2})`;
+
+};
+
+
+
+button1.addEventListener('click',eventButton1);
+
+button2.addEventListener('click',eventButton2);
+divcoltext.addEventListener('click',()=>
+{
+navigator.clipboard.writeText(divcoltext.innerText);
+});
+        </script>
+</body>
+
+</html>
