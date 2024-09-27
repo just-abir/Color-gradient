@@ -60,7 +60,37 @@ button{
     margin-right:2rem ;
 
 }
-        
+          /* Responsive Design for Mobile and Tablet */
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem;
+                text-align: center;
+            }
+
+            #coltext {
+                width: 80vw;
+            }
+
+            button {
+                padding: 0.75rem;
+                font-size: medium;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 1rem;
+            }
+
+            button {
+                padding: 1rem;
+                font-size: large;
+            }
+
+            #coltext {
+                width: 90vw;
+                font-size: small;
+            } 
     </style>
 </head>
 
